@@ -20,7 +20,10 @@ class User(Base):
     
     team = relationship("Team", back_populates="members")
 
-engine = create_engine('sqlite:///hackathon.db')
+import os
+
+DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///hackathon.db')
+engine = create_engine(DATABASE_URL)
 Base.metadata.create_all(engine)
 SessionLocal = sessionmaker(bind=engine, expire_on_commit=False)
 
