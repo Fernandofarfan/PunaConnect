@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  project = "punaconnect-personal-84519"
+  project = "punaconnect-bot-555"
   region  = "us-central1"
   zone    = "us-central1-a"
 }
